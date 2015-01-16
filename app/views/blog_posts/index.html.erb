@@ -1,0 +1,10 @@
+<h1>Blog Posts</h1>
+
+<% @blog_posts.each do |blog_post| %>
+  <p>Title: <%= blog_post.title %></p>
+  <p>Author: <%= blog_post.author %></p>
+  <p>Blog Post: <%= blog_post.body %></p>
+  <p><%= link_to "Edit", edit_blog_post_path(blog_post) %></p>
+  <p><%= link_to "Delete", blog_post_path(blog_post), method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <hr>
+<% end %>
